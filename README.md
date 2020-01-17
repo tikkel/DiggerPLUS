@@ -1,8 +1,8 @@
-# Digger
+# DiggerPLUS
 ## Port of an old <a href="http://lanale.de/">KC85-game</a> for <a href="https://gamebuino.com/gamebuino-meta">Gamebuino-META</a><br>
 (fork from the orig. programmed <a href="https://github.com/scmar/DiggerMETA">scmar/DiggerMETA</a>)
 <br><br>
-<img src="https://github.com/tikkel/Digger/blob/master/Etc/titlescreen.gif"/>
+<img src="./Etc/titlescreen.gif"/>
 <br><br>
 <img src="https://github.com/tikkel/Digger/blob/master/Etc/animation1.gif"/>
 <img src="https://github.com/tikkel/Digger/blob/master/Etc/animation4.gif"/><br>
