@@ -4,13 +4,13 @@
 <br><br>
 <img src="./Etc/titlescreen.gif"/>
 <br><br>
-<img src="https://github.com/tikkel/Digger/blob/master/Etc/animation1.gif"/>
-<img src="https://github.com/tikkel/Digger/blob/master/Etc/animation4.gif"/><br>
-<img src="https://github.com/tikkel/Digger/blob/master/Etc/animation3.gif"/>
-<img src="https://github.com/tikkel/Digger/blob/master/Etc/animation2.gif"/>
+<img src="./Etc/animation1.gif"/>
+<img src="./Etc/animation4.gif"/><br>
+<img src="./Etc/animation3.gif"/>
+<img src="./Etc/animation2.gif"/>
 <br><br>
-<img src="https://github.com/tikkel/Digger/blob/master/Etc/animation-digger-idle.gif"/>
-<img src="https://github.com/tikkel/Digger/blob/master/Etc/animation-diamonds.gif"/><br>
+<img src="./Etc/animation-digger-idle.gif"/>
+<img src="./Etc/animation-diamonds.gif"/><br>
 <br><br>
-<img src="https://github.com/tikkel/Digger/blob/master/Etc/highscore.png"/><br>
-See <a href="https://gamebuino.com/creations/wip-diggermeta">Gamebuino forum thread</a>
+<img src="./Etc/highscore.png"/><br>
+See <a href="https://community.gamebuino.com/t/diggermeta/1092">Gamebuino forum thread</a>
