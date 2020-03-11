@@ -170,7 +170,7 @@ void drawWorld() {
       gb.display.print(zl);
       gb.display.cursorX = 17;
       gb.display.setColor(INDEX_ORANGE, zbg); //oranges
-      gb.display.print(F("\03"));            //herz
+      gb.display.print(F("\03"));             //herz
     }
   
     // countdown
@@ -179,7 +179,9 @@ void drawWorld() {
     zc = String(countdown);
     while (zc.length() < 4)
       zc = String("0" + zc);
-    if ( (gb.frameCount % 6 == 0) && (countdown < 1000) )
+    if ( countdown == 0 )
+      countdown_toggle = false;
+    else if ( (gb.frameCount % 6 == 0) && (countdown < 1000) )
       countdown_toggle ? countdown_toggle = false : countdown_toggle = true; 
     countdown_toggle ? gb.display.print("    ") : gb.display.print(zc);
 
