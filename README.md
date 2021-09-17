@@ -1,7 +1,4 @@
-[![Build DiggerPLUS](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_DiggerPLUS.yml/badge.svg)](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_DiggerPLUS.yml)
-
-[![Build scroll-demo](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_scroll-demo.yml/badge.svg)](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_scroll-demo.yml)
-
+[![Build DiggerPLUS](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_DiggerPLUS.yml/badge.svg)](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_DiggerPLUS.yml)[![Build scroll-demo](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_scroll-demo.yml/badge.svg)](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_scroll-demo.yml)
 # DiggerPLUS
 ## Port of an old <a href="http://lanale.de/">KC85-game</a> for <a href="https://gamebuino.com/gamebuino-meta">Gamebuino-META</a><br>
 (fork from the orig. programmed <a href="https://github.com/scmar/DiggerMETA">scmar/DiggerMETA</a>)
