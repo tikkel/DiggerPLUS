@@ -1,3 +1,5 @@
+[![Build DiggerPLUS](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_DiggerPLUS.yml/badge.svg)](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_DiggerPLUS.yml)
+
 [![Build scroll-demo](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_scroll-demo.yml/badge.svg)](https://github.com/tikkel/DiggerPLUS/actions/workflows/build_scroll-demo.yml)
 
 # DiggerPLUS
