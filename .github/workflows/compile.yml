@@ -30,7 +30,7 @@ jobs:
           # This works like this: when the platform is "arduino:samd", the
           # variable fqbn is set to "arduino:samd:nano_33_iot".
           - arduino-platform: "arduino:samd"
-            fqbn: "arduino:samd:nano_33_iot"
+            fqbn: "gamebuino:samd:gamebuino_meta_native"
           - arduino-platform: "arduino:avr"
             fqbn: "arduino:avr:uno"
  
