@@ -1,3 +1,11 @@
+# compileTest.yml
+#
+# basiert auf:
+# Copyright (C) 2020  Armin Joachimsmeyer
+# https://github.com/ArminJo/Github-Actions
+#
+
+# Das ist der Name vom workflow.
 name: compileTest
 on: [push, pull_request]
 jobs:
@@ -14,7 +22,7 @@ jobs:
       with:
         arduino-board-fqbn: gamebuino:samd:gamebuino_meta_native
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
-        arduino-platform: gamebuino.samd,arduino:samd
+        #arduino-platform: gamebuino.samd,arduino:samd
         required-libraries: Gamebuino META
         sketch-names: "*.ino"
         sketch-names-find-start: "DiggerPLUS/"
