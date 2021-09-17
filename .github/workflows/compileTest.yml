@@ -16,4 +16,5 @@ jobs:
         platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
         arduino-platform: gamebuino.samd,arduino:samd
         required-libraries: Gamebuino META
-        
+        sketch-names: "*.ino"
+        sketch-names-find-start: 
