@@ -23,17 +23,5 @@ jobs:
           - source-url: https://github.com/Gamebuino/Gamebuino-META/archive/refs/heads/master.zip
             destination-name: "Gamebuino META"
         sketch-paths: |
-          - .
+          - scroll-demo
         verbose: true
-
-#    - name: Compile all files
-#      uses: ArminJo/arduino-test-compile@v3
-#      with:
-#        arduino-board-fqbn: gamebuino:samd:gamebuino_meta_native
-#        platform-url: https://gamebuino.com/sdk/package_gamebuino_index.json
-#        arduino-platform: gamebuino.samd,arduino:samd
-#        required-libraries: Gamebuino META
-#        #sketch-names: "*.ino"
-#        #sketch-names-find-start: "DiggerPLUS/"
-#        set-build-path: true
-#        debug-compile: true
