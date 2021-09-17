@@ -25,5 +25,5 @@ jobs:
           - source-url: https://github.com/Gamebuino/Gamebuino-META/archive/refs/heads/master.zip
             destination-name: "Gamebuino META"
         sketch-paths: |
-          - Etc/scroll-demo.ino
+          - Etc/scroll-demo/
         verbose: true
