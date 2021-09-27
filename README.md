@@ -2,7 +2,7 @@
 # DiggerPLUS
 ## Port of an old <a href="http://lanale.de/">KC85-game</a> for <a href="https://gamebuino.com/gamebuino-meta">Gamebuino-META</a><br>
 ### fork from the orig. programmed <a href="https://github.com/scmar/DiggerMETA">scmar/DiggerMETA</a>
-### ee <a href="https://community.gamebuino.com/t/diggermeta/1092">Gamebuino forum thread</a>
+### see also <a href="https://community.gamebuino.com/t/diggermeta/1092">Gamebuino forum thread</a>
 <br><br>
 <img src="./Etc/titlescreen.gif"/>
 <br><br>
