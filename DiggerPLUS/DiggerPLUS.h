@@ -37,12 +37,12 @@
 #define WORLD_H 14
 
 //8bit Operatoren
-#define PHYSICSTATE 16 //0x10, 0001 0000  physic-state
+#define PHYSICSTATE 16  //0x10, 0001 0000  physic-state
 #define RENDERSTATE 32  //0x20, 0010 0000  render-state
 
-#define SPRITEMASK 15   //0x0F, 0000 1111
-#define STATEMASK 240   //0xF0, 1111 0000
-#define TYPEMASK 192    //0xC0, 1100 0000
+#define SPRITEMASK 15  //0x0F, 0000 1111
+#define STATEMASK 240  //0xF0, 1111 0000
+#define TYPEMASK 192   //0xC0, 1100 0000
 
 //types of monsters
 #define TYPE_UD 0
@@ -58,8 +58,8 @@
 #define GAMEOVER 2
 #define SCORE 3
 
-#define EASY false
-#define HARD true
+#define EASY 1
+#define HARD 2
 
 
 #define LIVES 20

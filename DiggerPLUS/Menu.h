@@ -20,7 +20,7 @@ const MultiLang lang_highscore[]= {
 const MultiLang lang_name[]= {
                { LANG_EN, "your name?" },
                { LANG_DE, "dein Name?" },
-               { LANG_FR, "votre nom" },
+               { LANG_FR, "votre nom?" },
 };
 
 const MultiLang lang_resume[]= {
