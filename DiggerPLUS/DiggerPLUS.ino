@@ -65,7 +65,7 @@ byte lives = 0;
 byte liveseasy = 0;
 byte liveshard = 0;
 bool dead = false;
-byte gamemode = EASY;
+byte gamemode = 0;
 byte gamestate = PAUSED;
 int codepos = 0;
 int worldpos = 0;
@@ -131,7 +131,7 @@ void setup() {
   Fill_TonBuffer(TON_LOW, TON_HIGH, TON_RATE);
   gamemode = gb.save.get(0);
   if (gamemode == 0)
-    gamemode = EASY;
+    gamemode = HARD;
 }
 
 void loop() {
@@ -213,7 +213,7 @@ void loop() {
     case SCORE:
       if (gb.buttons.released(BUTTON_A))
         gamestate = PAUSED;
-      if (lives < 1 || lives > LIVES)  //update the highscore if
+      if (lives < 1)
         saveScore();
       viewScore();
       if (gb.frameCount % 10)
@@ -230,7 +230,7 @@ void loop() {
       updatePhysics();  //Physics ( falling() rocks & diamonds, moveMonster() )
       drawWorld();      //Render  ( scrolling screen, draw tiles )
 
-      if (lives < 1 || lives > LIVES) {
+      if (lives < 1) {
         loadScore();
         gamestate = SCORE;
       }
@@ -253,7 +253,8 @@ void newGame() {
   score = 0;
   curlevel = 0;
   maxlevel = 0;
-  lives = LIVES;
+  if (gamemode==EASY) lives = LIVESEASY;
+  else lives = LIVES;
   dead = false;
 }
 
@@ -423,10 +424,10 @@ void loadGame() {
   scorehard = gb.save.get(8);
 
   if (gamemode == 0)
-    gamemode = EASY;
+    gamemode = HARD;
 
   if (liveseasy == 0)
-    liveseasy = LIVES;
+    liveseasy = LIVESEASY;
   if (liveshard == 0)
     liveshard = LIVES;
 
