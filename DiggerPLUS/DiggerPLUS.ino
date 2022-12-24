@@ -35,24 +35,8 @@ int display_height = gb.display.height();
 int score = 0;
 int scoreeasy;
 int scorehard;
-int highscore[7] = {
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-};
-char scorename[7][9 + 1] = {
-  "         ",
-  "         ",
-  "         ",
-  "         ",
-  "         ",
-  "         ",
-  "         ",
-};
+int highscore[7];
+char scorename[7][9 + 1];
 int countdown = 5000;
 byte diams_need, diamonds;
 byte curlevel = 0;
@@ -88,29 +72,28 @@ byte idle = 0;
 
 //Statuszeile
 bool clr_flag = true;
-ColorIndex zfg, zbg;        //foreground- and backgroundcolor
-String zs = String(score);  //Score
+ColorIndex zfg, zbg;            //foreground- and backgroundcolor
+String zs = String(score);      //score
 bool zs_flag = true;
-String zc = String(countdown);  //Counter
-String zd = String(diamonds);   //Diamanten ist/soll
+String zc = String(countdown);  //counter
+String zd = String(diamonds);   //Diamanten Ist/Soll
 bool zd_flag = true;
 String zr = String(curlevel + 1);  //Raum
 bool zr_flag = true;
 String zl = String(lives);  //Leben
 bool zl_flag = true;
-String hs = String(score);
 
 //16 colors index palette
 const Color PALETTE_GAME[] = {
-  //     RGB565   idx name           customized
+  //     RGB565   idx name
   (Color)0x0000,  //0 INDEX_BLACK
   (Color)0x0210,  //1 INDEX_DARKBLUE
-  (Color)0x0011,  //2 INDEX_PURPLE   gb.gui.menu-Hintergrund? KCB_BLUE
+  (Color)0x0011,  //2 INDEX_PURPLE
   (Color)0x9338,  //3 INDEX_GREEN    --> "Violett" für Steine
-  (Color)0xCC68,  //4 INDEX_BROWN    gb.gui.menu-Akzent?
+  (Color)0xCC68,  //4 INDEX_BROWN
   (Color)0x6078,  //5 INDEX_DARKGRAY --> "dunkles Violett" für Steine
   (Color)0xac98,  //6 INDEX_GRAY     --> "helles Violett" für Steine
-  (Color)0xFFFF,  //7 INDEX_WHITE    gb.gui.menu-Vordergrund?
+  (Color)0xFFFF,  //7 INDEX_WHITE
   (Color)0xD8E4,  //8 INDEX_RED
   (Color)0xFD42,  //9 INDEX_ORANGE
   (Color)0xF720,  //a INDEX_YELLOW     --> Highscoreschrift
@@ -121,38 +104,38 @@ const Color PALETTE_GAME[] = {
   (Color)0xFEB2   //f INDEX_BEIGE
 };
 const Color PALETTE_MENU_EASY[] = {
-  //     RGB565   idx name           customized
+  //     RGB565   idx name
   (Color)0x4439,  //0 INDEX_BLACK
   (Color)0x4439,  //1 INDEX_DARKBLUE
-  (Color)0x4439,  //2 INDEX_PURPLE   gb.gui.menu-Hintergrund? KCB_BLUE
-  (Color)0x4439,  //3 INDEX_GREEN    --> "Violett" für Steine
-  (Color)0x4439,  //4 INDEX_BROWN    gb.gui.menu-Akzent?
-  (Color)0x4439,  //5 INDEX_DARKGRAY --> "dunkles Violett" für Steine
-  (Color)0x4439,  //6 INDEX_GRAY     --> "helles Violett" für Steine
-  (Color)0xFFFF,  //7 INDEX_WHITE    gb.gui.menu-Vordergrund?
-  (Color)0x4439,  //8 INDEX_RED
-  (Color)0xFD42,  //9 INDEX_ORANGE
-  (Color)0x4439,  //a INDEX_YELLOW     --> Highscoreschrift
-  (Color)0x4439,  //b INDEX_LIGHTGREEN --> Highscorehintergrund
+  (Color)0x4439,  //2 INDEX_PURPLE
+  (Color)0x4439,  //3 INDEX_GREEN
+  (Color)0x4439,  //4 INDEX_BROWN
+  (Color)0x4439,  //5 INDEX_DARKGRAY
+  (Color)0x4439,  //6 INDEX_GRAY
+  (Color)0xFFFF,  //7 INDEX_WHITE   gb.gui.menu-Vordergrund?
+  (Color)0x4439,  //8 INDEX_RED     gb.gui.menu-Hintergrund?
+  (Color)0xFD42,  //9 INDEX_ORANGE  gb.gui.menu-Akzent?
+  (Color)0x4439,  //a INDEX_YELLOW
+  (Color)0x4439,  //b INDEX_LIGHTGREEN
   (Color)0x4439,  //c INDEX_LIGHTBLUE
   (Color)0x4439,  //d INDEX_BLUE
   (Color)0x4439,  //e INDEX_PINK
   (Color)0x4439   //f INDEX_BEIGE
 };
 const Color PALETTE_MENU_HARD[] = {
-  //     RGB565   idx name           customized
+  //     RGB565   idx name
   (Color)0xD8E4,  //0 INDEX_BLACK
   (Color)0xD8E4,  //1 INDEX_DARKBLUE
-  (Color)0xD8E4,  //2 INDEX_PURPLE   gb.gui.menu-Hintergrund? KCB_BLUE
-  (Color)0xD8E4,  //3 INDEX_GREEN    --> "Violett" für Steine
-  (Color)0xD8E4,  //4 INDEX_BROWN    gb.gui.menu-Akzent?
-  (Color)0xD8E4,  //5 INDEX_DARKGRAY --> "dunkles Violett" für Steine
-  (Color)0xD8E4,  //6 INDEX_GRAY     --> "helles Violett" für Steine
-  (Color)0xFFFF,  //7 INDEX_WHITE    gb.gui.menu-Vordergrund?
-  (Color)0xD8E4,  //8 INDEX_RED
-  (Color)0xFD42,  //9 INDEX_ORANGE
-  (Color)0xD8E4,  //a INDEX_YELLOW     --> Highscoreschrift
-  (Color)0xD8E4,  //b INDEX_LIGHTGREEN --> Highscorehintergrund
+  (Color)0xD8E4,  //2 INDEX_PURPLE
+  (Color)0xD8E4,  //3 INDEX_GREEN
+  (Color)0xD8E4,  //4 INDEX_BROWN
+  (Color)0xD8E4,  //5 INDEX_DARKGRAY
+  (Color)0xD8E4,  //6 INDEX_GRAY
+  (Color)0xFFFF,  //7 INDEX_WHITE   gb.gui.menu-Vordergrund?
+  (Color)0xD8E4,  //8 INDEX_RED     gb.gui.menu-Hintergrund?
+  (Color)0xFD42,  //9 INDEX_ORANGE  gb.gui.menu-Akzent?
+  (Color)0xD8E4,  //a INDEX_YELLOW
+  (Color)0xD8E4,  //b INDEX_LIGHTGREEN
   (Color)0xD8E4,  //c INDEX_LIGHTBLUE
   (Color)0xD8E4,  //d INDEX_BLUE
   (Color)0xD8E4,  //e INDEX_PINK
@@ -180,11 +163,11 @@ void loop() {
       gb.lights.clear();
       switch (gb.gui.menu(lang_title, (gamemode == EASY) ? Pausemenu_easy : Pausemenu_hard, MENULENGTH)) {
 
-        case 0:              //resume game
+        case 0:  //resume game
           if (lives != 0) {  //resume from pause
             initStatus();
             gamestate = RUNNING;
-          } else {  //load last game stand
+          } else {  //load last game state
             oldGame();
             initWorld(curlevel);
             initStatus();
@@ -371,6 +354,7 @@ void nextLevel() {
 }
 
 void viewScore() {
+  String hs = String(score);
   gb.display.fill(INDEX_LIGHTGREEN);
   gb.display.setColor(INDEX_YELLOW);
   gb.display.setCursor(36, 0);
